@@ -113,4 +113,16 @@ Atualmente o projeto está preparado para deploy usando:
 
 - **GitHub Pages**
 
-O build é gerado via:
+O build é gerado via: `npm run build`
+
+---
+
+# 📄 Licença
+
+Este projeto foi criado para fins educacionais e pessoais.
+
+---
+
+## 🔗 Demo
+
+[Soletra Especial](https://ljoaolucasl.github.io/soletra-especial/)
