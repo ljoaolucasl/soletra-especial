@@ -77,28 +77,6 @@ Principais objetivos técnicos:
 
 ---
 
-# 📁 Estrutura do projeto
-src/
-├── game/
-│ ├── rounds.ts # definição das rodadas
-│ ├── rules.ts # regras do jogo
-│ ├── storage.ts # persistência de progresso
-│ ├── types.ts # tipagens
-│ └── utils.ts # utilitários
-│
-├── ui/
-│ ├── render.ts # renderização da interface
-│ ├── dom.ts # helpers de DOM
-│ └── toast.ts # notificações
-│
-├── styles.scss # estilos globais
-└── main.ts # inicialização da aplicação
-
-
-A separação entre **lógica de jogo**, **UI** e **utilitários** permite manter o código mais organizado e fácil de manter.
-
----
-
 # 📱 Responsividade
 
 A interface foi otimizada principalmente para **dispositivos móveis**, com foco em:
