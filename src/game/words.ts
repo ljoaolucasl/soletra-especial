@@ -1,8 +1,8 @@
 export type Puzzle = {
-  id: string;                 // usado pra salvar progresso
-  center: string;             // letra obrigatória
-  letters: string[];          // 7 letras (inclui center)
-  words: string[];            // dicionário permitido (estático)
+  id: string;
+  center: string;
+  letters: string[];
+  words: string[];
   title?: string;
 };
 
@@ -11,8 +11,6 @@ export const PUZZLE: Puzzle = {
   title: "Puzzle de teste",
   center: "a",
   letters: ["a", "e", "i", "l", "m", "r", "t"],
-  // Troque aqui depois pelas suas palavras.
-  // Regras recomendadas: min 4 letras, sem acentos, minúsculas.
   words: [
     "alma",
     "amarelar",
@@ -25,7 +23,7 @@ export const PUZZLE: Puzzle = {
     "rima",
     "matar",
     "martelar",
-    "meter", // <- essa não usa 'a' (vai ser filtrada)
+    "meter",
     "tirar",
     "maria",
     "latir",

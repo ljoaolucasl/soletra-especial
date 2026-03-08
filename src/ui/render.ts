@@ -31,7 +31,6 @@ export function renderRoundNav(params: {
     if (isCurrent) btn.classList.add("is-current");
     if (done) btn.classList.add("is-done");
 
-    // ✅ brilho no recém liberado
     const isFreshUnlocked = highlightNext && idx === nextUnlocked && idx !== currentIndex;
     if (isFreshUnlocked) btn.classList.add("is-unlocked");
 
@@ -53,7 +52,6 @@ export function renderHoneycomb(round: Round, order: string[]) {
   const outer = letters.filter((c) => c !== center);
   const outerCount = outer.length;
 
-  // cria centro
   const centerBtn = document.createElement("button");
   centerBtn.type = "button";
   centerBtn.className = "hex hex--center";
@@ -62,7 +60,6 @@ export function renderHoneycomb(round: Round, order: string[]) {
   centerBtn.setAttribute("aria-label", `Letra central ${center.toUpperCase()}`);
   root.appendChild(centerBtn);
 
-  // cria outer em círculo
   outer.forEach((ch, i) => {
     const angle = (360 / outerCount) * i;
 
@@ -76,7 +73,6 @@ export function renderHoneycomb(round: Round, order: string[]) {
     root.appendChild(b);
   });
 
-  // display letras
   $("#letters-display").textContent = `Centro: ${round.center.toUpperCase()} • Letras: ${round.letters
     .map((c) => c.toUpperCase())
     .join(" ")}`;

@@ -15,7 +15,6 @@ export function buildDictionary(round: Round): Set<string> {
     .filter((w) => w.includes(center))
     .filter((w) => [...w].every((ch) => letters.has(ch)));
 
-  // garante que a specialWord esteja no dict (se ela for válida)
   const special = normalizeWord(round.specialWord);
   if (
     special.length >= 4 &&

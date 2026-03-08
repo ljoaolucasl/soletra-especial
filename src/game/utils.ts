@@ -1,5 +1,4 @@
 export function normalizeWord(input: string): string {
-  // remove acentos, deixa minúsculo, e mantém só [a-z]
   return input
     .toLowerCase()
     .normalize("NFD")

@@ -43,7 +43,6 @@ function main() {
       updatedAt: Date.now(),
     } as CampaignState);
 
-  // garante estrutura
   for (const r of rounds) {
     state.foundByRound[r.id] ??= [];
     state.specialsFound[r.id] ??= false;
@@ -84,7 +83,6 @@ function main() {
   }
 
   function allWordsCompleted(): boolean {
-    // precisa comparar found vs dict para TODAS as rodadas
     for (const r of rounds) {
       const dict = buildDictionary(r);
       const found = new Set<string>((state.foundByRound[r.id] ?? []).map(normalizeWord));
@@ -169,7 +167,6 @@ function main() {
 
     setHint("");
 
-    // ✅ aplica UI especial de fim (∞ e foto) se necessário
     applyEndgameUI();
   }
 
@@ -273,7 +270,6 @@ function main() {
           });
         }
 
-        // ✅ GRANDE FINAL: achou todas as palavras especiais
         if (allSpecialsCompleted()) {
           showCelebrateModal({
             title: "🌸💍 VOCÊ DESBLOQUEOU TODAS AS PALAVRAS ESPECIAIS! 💍🌸",
@@ -283,7 +279,6 @@ function main() {
           });
         }
       } else {
-        // ✅ se já tinha achado antes, ainda mostra algo (pra não parecer “sumiu”)
         showCelebrateModal({
           title: "💖 Palavra especial (de novo)!",
           body: "Você já tinha encontrado essa palavra especial antes ✨",
@@ -296,7 +291,6 @@ function main() {
     renderRoundNavNow(highlightNext);
     renderRound();
 
-    // ✅ FINAL TOTAL: todas as palavras de todas as rodadas
     if (allWordsCompleted()) {
       showCelebrateModal({
         title: "💗✨ FINAL COMPLETO ✨💗",
@@ -308,7 +302,6 @@ function main() {
     }
   }
 
-  // ========= listeners =========
   $("#btn-help").addEventListener("click", () => openHelp(true));
   $("#btn-close-help").addEventListener("click", () => openHelp(false));
 
@@ -351,7 +344,6 @@ function main() {
     addChar(e.key);
   });
 
-  // ========= start =========
   renderRoundNavNow(false);
   renderRound();
 }
