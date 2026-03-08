@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Soletra Especial</title>
+    <script type="module" crossorigin src="/soletra-especial/assets/index-BbGERjxD.js"></script>
+    <link rel="stylesheet" crossorigin href="/soletra-especial/assets/index-jZGtbl4c.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">S</div>
+          <div class="brand__text">
+            <div class="brand__title">Soletra Especial</div>
+            <div class="brand__subtitle">palavras que contam a nossa história ✨</div>
+          </div>
+        </div>
+
+        <div class="topbar__actions">
+          <button id="btn-help" class="btn btn--ghost" type="button">Como jogar</button>
+          <button id="btn-reset" class="btn btn--danger" type="button">Reset</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel--game">
+          <div class="scorebar">
+            <div id="round-nav" class="round-nav" aria-label="Rodadas"></div>
+
+            <div class="score">
+              <div class="score__label">Pontos</div>
+              <div id="score" class="score__value">0</div>
+            </div>
+
+            <div id="rank-card" class="rank">
+              <div class="rank__label">Nível</div>
+
+              <!-- Texto padrão -->
+              <div id="rank" class="rank__value">Bonita</div>
+
+              <!-- Foto no final (fica escondida até completar tudo) -->
+              <div class="rank__photo">
+                <img id="rank-photo" alt="Foto nossa" />
+              </div>
+            </div>
+
+            <div class="meta">
+              <div class="meta__label">Encontradas</div>
+              <div id="found-count" class="meta__value">0</div>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div id="current" class="entry__current" aria-live="polite"></div>
+            <div class="entry__hint" id="hint"></div>
+          </div>
+
+          <div id="honeycomb" class="honeycomb" aria-label="Letras do jogo"></div>
+
+          <div class="controls">
+            <button id="btn-delete" class="btn" type="button">Apagar</button>
+            <button id="btn-shuffle" class="btn btn--ghost" type="button">Misturar</button>
+            <button id="btn-enter" class="btn btn--primary" type="button">Enviar</button>
+          </div>
+
+          <div class="keyboard" id="keyboard" aria-label="Teclado"></div>
+        </section>
+
+        <aside class="panel panel--list">
+          <div class="panel__title">
+            Palavras
+            <span id="progress-pill" class="pill">0 / 0</span>
+          </div>
+
+          <div class="list">
+            <div class="list__header">
+              <span>Encontradas</span>
+              <span class="muted" id="pangram-status"></span>
+            </div>
+            <ul id="found-list" class="found"></ul>
+
+            <div class="divider"></div>
+
+            <div class="list__header">
+              <span>Dicas</span>
+              <span class="muted" id="letters-display"></span>
+            </div>
+            <div class="tips" id="tips"></div>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <span class="muted">Dica: use teclado físico. Enter envia • Backspace apaga.</span>
+      </footer>
+    </div>
+
+    <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog id="help" class="modal">
+      <div class="modal__title">Como jogar</div>
+      <div class="modal__body">
+        <ul>
+          <li>Monte palavras usando apenas as letras da colmeia.</li>
+          <li>A letra do centro é obrigatória em toda palavra.</li>
+          <li>Mínimo de 4 letras.</li>
+          <li>Cada rodada tem uma palavra especial. Quando você encontrar essa palavra, a próxima rodada é liberada e você pode clicar nela para seguir em frente.</li>
+        </ul>
+      </div>
+      <div class="modal__actions">
+        <button id="btn-close-help" class="btn btn--primary" type="button">Fechar</button>
+      </div>
+    </dialog>
+
+    <dialog id="celebrate" class="modal modal--celebrate">
+      <div class="modal__title" id="celebrate-title">💖 Palavra especial!</div>
+      <div class="modal__body">
+        <div id="celebrate-text"></div>
+        <div class="celebrate-hint" id="celebrate-hint"></div>
+      </div>
+      <div class="modal__actions">
+        <button id="btn-close-celebrate" class="btn btn--primary" type="button">Entendi</button>
+      </div>
+    </dialog>
+
+  </body>
+</html>
